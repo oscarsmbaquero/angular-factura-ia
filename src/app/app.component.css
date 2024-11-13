@@ -1,0 +1,29 @@
+/* .bg-image {
+    background-image: url('https://e0.pxfuel.com/wallpapers/220/97/desktop-wallpaper-hot-wheels-widescreen-cool-hot-wheels-logo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    padding-bottom: 100px;
+  } */
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  main {
+    flex: 1;
+  }
+  
+  .bg-image {
+    background-image: linear-gradient(to bottom, rgba(3,3,3,0.8), rgba(3, 3, 0, 0.8)), url('https://e0.pxfuel.com/wallpapers/220/97/desktop-wallpaper-hot-wheels-widescreen-cool-hot-wheels-logo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    min-height: 100vh;
+  }
+  
