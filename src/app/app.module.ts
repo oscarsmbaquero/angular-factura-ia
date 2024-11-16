@@ -11,6 +11,7 @@ import { CoreModule } from './core/core.module';
 //Components
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { CreateComponent } from './pages/create/create.component';
+import { ListComponent } from './pages/create/list/list.component';
 
 
 //material
@@ -25,6 +26,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 //primeng
 import { ButtonModule } from 'primeng/button';
 import { FileUploadModule } from 'primeng/fileupload';
+import { TableModule } from 'primeng/table';
 // import { MaterialFileInputModule } from 'ngx-material-file-input';
 
 
@@ -36,6 +38,7 @@ import { FileUploadModule } from 'primeng/fileupload';
     NavbarComponent,
     CreateComponent,
     FooterComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,8 @@ import { FileUploadModule } from 'primeng/fileupload';
     //MaterialFileInputModule,
     MatIconModule,
     ButtonModule,
-    FileUploadModule
+    FileUploadModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
