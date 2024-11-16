@@ -22,6 +22,9 @@ import { FooterComponent } from './core/components/footer/footer.component';
 import { MatSelectModule } from '@angular/material/select'; 
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+//primeng
+import { ButtonModule } from 'primeng/button';
+import { FileUploadModule } from 'primeng/fileupload';
 // import { MaterialFileInputModule } from 'ngx-material-file-input';
 
 
@@ -49,7 +52,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatSelectModule,
     MatSnackBarModule,
     //MaterialFileInputModule,
-    MatIconModule
+    MatIconModule,
+    ButtonModule,
+    FileUploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]

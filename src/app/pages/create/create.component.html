@@ -1,61 +1,38 @@
 <div class="container" data-aos="fade-down" *ngIf="!loading; else Loading">
   <mat-card>
     <mat-card-content>
-      <img
-        src="../../../assets/logo1.png"
-        width="130"
-        height="90"
-        alt=""
-        style="margin-left: 40px"
-      />
-      <form novalidate (ngSubmit)="onSubmit()" [formGroup]="registerCar">
-        <!-- <mat-form-field appearance="fill">
-          <mat-label>Marca:</mat-label>
-          <input matInput formControlName="marca" />
-          <mat-error *ngIf="registerCar.get('marca')?.invalid">
-            La marca es requerido.
-          </mat-error>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <mat-label>Modelo:</mat-label>
-          <input matInput formControlName="modelo" />
-          <mat-error *ngIf="registerCar.get('modelo')?.invalid">
-            El módelo es requerido.
-          </mat-error>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <mat-label>Año:</mat-label>
-          <input matInput formControlName="anio" />
-          <mat-error *ngIf="registerCar.get('anio')?.invalid">
-            Obligatorio y max. 4 dígitos.
-          </mat-error>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <mat-label>Tipo de Vehìculo</mat-label>
-          <mat-select disableRipple formControlName="tipo">
-            <mat-option value="4x4">4x4</mat-option>
-            <mat-option value="Berlina">Berlina</mat-option>
-            <mat-option value="Electrico">Eléctrico</mat-option>
-            <mat-option value="Deportivo">Deportivo</mat-option>
-            <mat-option value="MuscleCar">Muscle Car</mat-option>
-            <mat-option value="Emergencias">Emergencias</mat-option>
-            <mat-option value="Dragster">Dragster</mat-option>
-          </mat-select>
-        </mat-form-field> -->
-        <input type="file" 
-               (change)="onFileSelected($event)" 
-               accept="image/*"
-               >
-        <mat-card-content>
-          <button style="margin: 10px;"
-            mat-raised-button
-            color="primary"
-            [disabled]="!registerCar.valid"
-          >
-            Enviar
-          </button>
-        </mat-card-content>
-      </form>
+      <div class="card">
+        <div>
+          <!-- <img
+          src="../../../assets/logo1.png"
+          width="90"
+          height="90"
+          alt=""
+          style="margin-left: 40px"
+        /> -->
+        <span
+      class="text-warning"
+      >Facturas</span
+    >&nbsp;<span class="text-danger">IA</span>
+  
+        </div>
+        <div>
+          <form novalidate [formGroup]="registerCar">
+            <div class="file-upload">
+              <label for="fileInput" class="custom-file-upload">
+                <i class="pi pi-upload"></i> {{nameArchivo || 'Seleccionar archivo'}}
+              </label>
+              <input 
+                type="file" 
+                id="fileInput" 
+                (change)="onFileSelected($event)" 
+                accept="image/*"
+              />
+            </div>
+              <p-button label="Enviar" icon="pi pi-check" size="small" (click)="onSubmit()" [disabled]="!registerCar.valid"/>          
+          </form>
+        </div>
+    </div>
     </mat-card-content>
   </mat-card>
 </div>

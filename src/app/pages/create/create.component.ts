@@ -39,6 +39,8 @@ export class CreateComponent {
   // variable submitted a false
   public submitted: boolean = false;
 
+  nameArchivo = '';
+
   selectedFile: File | null = null;
 
   // Inicializamos FormBuilder en el constructor
@@ -67,13 +69,20 @@ export class CreateComponent {
   }
 
   onFileSelected(event: any) {
+    console.log(event);
+    
     const file: File = event.target.files[0];
-    console.log(file, 61);
+    this.nameArchivo = file.name;
+    console.log(file.name);
+    
     this.registerCar.get('imagen')?.setValue(file);
+    
   }
 
   //Función accionada al clickar en submit
   public onSubmit(): void {
+    console.log('sentro');
+    
     // El usuario ha pulsado en submit->cambia a true submitted
     this.submitted = true;
     // Si el formulario es valido
@@ -82,6 +91,8 @@ export class CreateComponent {
       const car: ICar = {
         imagen: this.registerCar.get('imagen')?.value,
       };
+      console.log(car);
+      
       this.loading= true;
       this.carsservice.addCars(car).subscribe(
         (response) => {

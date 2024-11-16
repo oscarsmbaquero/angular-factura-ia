@@ -23,6 +23,8 @@
     "@cloudinary/ng": "^1.11.2",
     "@cloudinary/url-gen": "^1.9.2",
     "aos": "^2.3.4",
+    "primeicons": "^7.0.0",
+    "primeng": "^15.4.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

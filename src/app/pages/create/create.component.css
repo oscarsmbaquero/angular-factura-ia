@@ -1,24 +1,94 @@
+/* Estilos generales */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80%;
-  
+  min-height: 100vh;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  border: none;
 }
 
 mat-card {
-  max-width: 450px;
+  max-width: 400px;
   width: 100%;
-  background-color: whitesmoke;
+  margin: 0 auto;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+/* Imagen */
+.card img {
+  margin: 0 auto;
+  display: block;
+  border-radius: 50%;
+}
+
+/* Formulario */
+form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding-left: 50px;
-  margin-left: 0px;
-  margin-top: 60px;
-  margin-bottom: 90px;
-  /* padding-top: 60px; */
-  /* padding-bottom: 60px; */
-  border-radius: 20px;
+  gap: 1rem;
+  width: 100%;
 }
+
+input[type="file"] {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5rem;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Botón */
+p-button {
+  width: 100%;
+  max-width: 200px;
+  align-self: center;
+}
+
+.file-upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type="file"] {
+  display: none; /* Oculta el input de archivo real */
+}
+
+.custom-file-upload {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #007bff; /* Color de fondo personalizado */
+  color: white; /* Color de texto */
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.custom-file-upload i {
+  margin-right: 8px; /* Espacio entre el ícono y el texto */
+  font-size: 18px;
+}
+
+.custom-file-upload:hover {
+  background-color: #0056b3; /* Cambia el color al hacer hover */
+}
+
+.custom-file-upload:active {
+  background-color: #003f7f; /* Color al hacer clic */
+}
+
