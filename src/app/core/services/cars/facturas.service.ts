@@ -35,7 +35,7 @@ export class FacturasService {
     const formData = new FormData();
     formData.append('imagen', body.imagen);
     return this.httpClient.post<ICar>(
-      `${environment.apiUrl}cars`,
+      `${environment.apiUrl}facturas`,
       formData
     );
   }
