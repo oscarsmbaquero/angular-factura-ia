@@ -23,7 +23,7 @@
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/list" data-toggle="collapse" data-target=".navbar-collapse.show">Listado</a>
       </li>
-      <li *ngIf="userActive" class="nav-item" routerLinkActive="active">
+      <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/anadir" data-toggle="collapse" data-target=".navbar-collapse.show">Añadir</a>
       </li>
       <li *ngIf="!userActive; else logoutLink" class="nav-item" routerLinkActive="active">
