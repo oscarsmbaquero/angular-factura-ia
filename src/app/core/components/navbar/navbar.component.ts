@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CarsService } from '../../services/cars/cars.service';
+import {  FacturasService } from '../../services/cars/facturas.service';
 import { FavoriteCarsCountService } from '../../services/numberFavorite/number-favorite.service';
 import { UsersService } from '../../services/users/users.service';
 import { IUser } from '../../services/models/user-models';
@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
   
   constructor(
     private favoriteCarsCountService: FavoriteCarsCountService,
-    private carsService: CarsService,
+    private facturasService: FacturasService,
     private usersService: UsersService, 
   ) { }
 

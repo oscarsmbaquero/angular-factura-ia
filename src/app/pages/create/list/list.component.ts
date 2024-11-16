@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FacturasService } from 'src/app/core/services/cars/facturas.service';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent {
+export class ListComponent implements OnInit{
 
   products =[
     {
@@ -93,5 +94,26 @@ export class ListComponent {
   rating: 5
 },
   ]
+
+  facturas! : any[]
+
+  constructor(
+    private facturasService: FacturasService
+  ){
+
+  }
+
+  ngOnInit(): void {
+    this.facturasService.getfacturas().subscribe((element)=>{
+      this.facturas = element;
+      console.log(this.facturas);
+            
+    })
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    
+  }
+
+
 
 }

@@ -1,6 +1,13 @@
-.tabla{
+.tabla {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     min-height: 100vh;
+    padding: 10px;
+    box-sizing: border-box; 
+    width: 100%; 
+}
+
+.tabla p-table {
+    width: 100%; /* Hace que la tabla ocupe todo el ancho disponible dentro de .tabla */
 }

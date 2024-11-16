@@ -11,7 +11,7 @@ import {
 } from '@angular/forms';
 
 import { trigger, transition, style, animate } from '@angular/animations';
-import { CarsService } from 'src/app/core/services/cars/cars.service';
+import { FacturasService } from 'src/app/core/services/cars/facturas.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import * as AOS from 'aos';
 
@@ -46,7 +46,7 @@ export class CreateComponent {
   // Inicializamos FormBuilder en el constructor
   constructor(
     private formBuilder: FormBuilder,
-    private carsservice: CarsService,
+    private facturasService: FacturasService,
     private router: Router,
     private snackBar: MatSnackBar
   ) {
@@ -94,7 +94,7 @@ export class CreateComponent {
       console.log(car);
       
       this.loading= true;
-      this.carsservice.addCars(car).subscribe(
+      this.facturasService.addCars(car).subscribe(
         (response) => {
           console.log('Datos enviados con éxito');
           this.loading = false;

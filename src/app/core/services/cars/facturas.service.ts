@@ -8,16 +8,16 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class CarsService {
+export class FacturasService {
   private favoriteCars: string[] = [];
   private favoriteCarsSubject = new BehaviorSubject<string[]>([]);
 
 
   constructor(private httpClient: HttpClient) { }
 
-  // public getCars():Observable<ICar[]> {
-  //   return this.httpClient.get<ICar[]>(`${environment.apiUrl}cars`);
-  // }
+  public getfacturas():Observable<ICar[]> {
+    return this.httpClient.get<ICar[]>(`${environment.apiUrl}facturas`);
+  }
   // public deleteCar(id: string): Observable<ICar> {
   //   console.log(id,22)
   //   return this.httpClient.delete<ICar>( `${environment.apiUrl}cars/delete/${id}`);
