@@ -25,12 +25,12 @@
         </ng-template>
         <ng-template pTemplate="body" let-product>
             <tr>
-                <td>{{ product.cliente }}</td>
+                <td>{{ product.proveedor }}</td>
                 <td>{{ product.cif }}</td>
                 <td>{{ product.importe }}</td>
                 <td>{{ product.iva }}</td>
                 <td>{{ product.importeTotal }}</td>
-                <td>{{ product.fecha }}</td>
+                <td>{{formatDate(product.fecha)  }}</td>
                 
             </tr>
         </ng-template>

@@ -8,93 +8,6 @@ import { FacturasService } from 'src/app/core/services/cars/facturas.service';
 })
 export class ListComponent implements OnInit{
 
-  products =[
-    {
-      id: '1000',
-      code: 'f230fh0g3',
-      name: 'Bamboo Watch',
-      description: 'Product Description',
-      image: 'bamboo-watch.jpg',
-      price: 65,
-      category: 'Accessories',
-      quantity: 24,
-      inventoryStatus: 'INSTOCK',
-      rating: 5
-  },
-  {
-    id: '1000',
-    code: 'f230fh0g3',
-    name: 'Bamboo Watch',
-    description: 'Product Description',
-    image: 'bamboo-watch.jpg',
-    price: 65,
-    category: 'Accessories',
-    quantity: 24,
-    inventoryStatus: 'INSTOCK',
-    rating: 5
-},
-{
-  id: '1000',
-  code: 'f230fh0g3',
-  name: 'Bamboo Watch',
-  description: 'Product Description',
-  image: 'bamboo-watch.jpg',
-  price: 65,
-  category: 'Accessories',
-  quantity: 24,
-  inventoryStatus: 'INSTOCK',
-  rating: 5
-},
-{
-  id: '1000',
-  code: 'f230fh0g3',
-  name: 'Bamboo Watch',
-  description: 'Product Description',
-  image: 'bamboo-watch.jpg',
-  price: 65,
-  category: 'Accessories',
-  quantity: 24,
-  inventoryStatus: 'INSTOCK',
-  rating: 5
-},
-{
-  id: '1000',
-  code: 'f230fh0g3',
-  name: 'Bamboo Watch',
-  description: 'Product Description',
-  image: 'bamboo-watch.jpg',
-  price: 65,
-  category: 'Accessories',
-  quantity: 24,
-  inventoryStatus: 'INSTOCK',
-  rating: 5
-},
-{
-  id: '1000',
-  code: 'f230fh0g3',
-  name: 'Bamboo Watch',
-  description: 'Product Description',
-  image: 'bamboo-watch.jpg',
-  price: 65,
-  category: 'Accessories',
-  quantity: 24,
-  inventoryStatus: 'INSTOCK',
-  rating: 5
-},
-{
-  id: '1000',
-  code: 'f230fh0g3',
-  name: 'Bamboo Watch',
-  description: 'Product Description',
-  image: 'bamboo-watch.jpg',
-  price: 65,
-  category: 'Accessories',
-  quantity: 24,
-  inventoryStatus: 'INSTOCK',
-  rating: 5
-},
-  ]
-
   facturas! : any[]
 
   constructor(
@@ -112,6 +25,17 @@ export class ListComponent implements OnInit{
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     
+  }
+   formatDate(dateString: any) {
+    const date = new Date(dateString);
+    
+    // Extrae el día, mes y año
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Los meses van de 0 a 11
+    const year = date.getFullYear();
+  
+    // Retorna la fecha en formato dd/mm/yyyy
+    return `${day}/${month}/${year}`;
   }
 
 
