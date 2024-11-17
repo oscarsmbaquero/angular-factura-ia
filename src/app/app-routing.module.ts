@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'list', component: ListComponent },
   { path: 'login', component: LoginComponent },
   { path: '', pathMatch:'full', redirectTo:'list'},
-  { path: '**', pathMatch:'full', redirectTo:'anadir'}
+  { path: '**', pathMatch:'full', redirectTo:'login'}
 ];
 
 @NgModule({

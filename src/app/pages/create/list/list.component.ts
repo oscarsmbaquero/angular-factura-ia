@@ -7,6 +7,9 @@ import { FacturasService } from 'src/app/core/services/cars/facturas.service';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit{
+seePhoto(url: string) {
+  window.location.href = url;
+}
 
   facturas! : any[]
   loading = true;

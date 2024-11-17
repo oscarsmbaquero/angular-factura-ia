@@ -24,6 +24,9 @@
                 <th pSortableColumn="quantity" style="width:20%">
                     Fecha <p-sortIcon field="quantity" />
                 </th>
+                <th pSortableColumn="quantity" style="width:20%">
+                    Opciones <p-sortIcon field="quantity" />
+                </th>
                 
             </tr>
         </ng-template>
@@ -35,6 +38,7 @@
                 <td>{{ product.iva }}</td>
                 <td>{{ product.importeTotal }}</td>
                 <td>{{formatDate(product.fecha)  }}</td>
+                <td style="cursor: pointer;" (click)="seePhoto(product.url)"><img src="../../../../assets/camara.png" width="45px"/></td>
                 
             </tr>
         </ng-template>
