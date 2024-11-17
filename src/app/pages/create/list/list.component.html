@@ -1,5 +1,9 @@
 <div class="tabla" *ngIf="!loading; else Loading">
-    <p-table [value]="facturas">
+    <p-table [value]="facturas"  
+             styleClass="p-datatable-striped"  
+             [paginator]="true"
+             [rows]="5"
+             [rowsPerPageOptions]="[5, 10, 20]">
         <ng-template pTemplate="header">
             <tr>
                 <th pSortableColumn="code" style="width:30%">
