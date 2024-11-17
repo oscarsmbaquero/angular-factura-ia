@@ -38,7 +38,7 @@
                 <td>{{ product.iva }}</td>
                 <td>{{ product.importeTotal }}</td>
                 <td>{{formatDate(product.fecha)  }}</td>
-                <td style="cursor: pointer;" (click)="seePhoto(product.url)"><img src="../../../../assets/camara.png" width="45px"/></td>
+                <td *ngIf="product.url" style="cursor: pointer;" (click)="seePhoto(product.url)"><img src="../../../../assets/camara.png" width="45px"/></td>
                 
             </tr>
         </ng-template>
