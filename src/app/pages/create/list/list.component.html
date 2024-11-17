@@ -1,49 +1,68 @@
+<div class="container buscador">
+  <div class="input-container">
+    <div>
+      <input
+        type="text"
+        (keyup)="capturarTexto($event)"
+        class="input"
+        placeholder="Buscar"
+      />
+      <i class="fa fa-search search-icon" style="color: black"></i>
+    </div>
+  </div>
+</div>
 <div class="tabla" *ngIf="!loading; else Loading">
-    <p-table [value]="facturas"  
-             styleClass="p-datatable-striped"  
-             [paginator]="true"
-             [rows]="5"
-             [rowsPerPageOptions]="[5, 10, 20]">
-        <ng-template pTemplate="header">
-            <tr>
-                <th pSortableColumn="code" style="width:30%">
-                    Proveedor<p-sortIcon field="code" />
-                </th>
-                <th pSortableColumn="name" style="width:20%">
-                    Cif <p-sortIcon field="name" />
-                </th>
-                <th pSortableColumn="category" style="width:10%">
-                    Importe <p-sortIcon field="category" />
-                </th>
-                <th pSortableColumn="quantity" style="width:10%">
-                    Iva <p-sortIcon field="quantity" />
-                </th>
-                <th pSortableColumn="quantity" style="width:10%">
-                    I. Total <p-sortIcon field="quantity" />
-                </th>
-                <th pSortableColumn="quantity" style="width:20%">
-                    Fecha <p-sortIcon field="quantity" />
-                </th>
-                <th pSortableColumn="quantity" style="width:20%">
-                    Opciones <p-sortIcon field="quantity" />
-                </th>
-                
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-product>
-            <tr>
-                <td>{{ product.proveedor }}</td>
-                <td>{{ product.cif }}</td>
-                <td>{{ product.importe }}</td>
-                <td>{{ product.iva }}</td>
-                <td>{{ product.importeTotal }}</td>
-                <td>{{formatDate(product.fecha)  }}</td>
-                <td *ngIf="product.url" style="cursor: pointer;" (click)="seePhoto(product.url)"><img src="../../../../assets/camara.png" width="45px"/></td>
-                
-            </tr>
-        </ng-template>
-    </p-table>
+  <p-table
+    [value]="facturas"
+    styleClass="p-datatable-striped"
+    [paginator]="true"
+    [rows]="5"
+    [rowsPerPageOptions]="[5, 10, 20]"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="code" style="width: 30%">
+          Proveedor<p-sortIcon field="code" />
+        </th>
+        <th pSortableColumn="name" style="width: 20%">
+          Cif <p-sortIcon field="name" />
+        </th>
+        <th pSortableColumn="category" style="width: 10%">
+          Importe <p-sortIcon field="category" />
+        </th>
+        <th pSortableColumn="quantity" style="width: 10%">
+          Iva <p-sortIcon field="quantity" />
+        </th>
+        <th pSortableColumn="quantity" style="width: 10%">
+          I. Total <p-sortIcon field="quantity" />
+        </th>
+        <th pSortableColumn="quantity" style="width: 20%">
+          Fecha <p-sortIcon field="quantity" />
+        </th>
+        <th pSortableColumn="quantity" style="width: 20%">
+          Opciones <p-sortIcon field="quantity" />
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+      <tr>
+        <td>{{ product.proveedor }}</td>
+        <td>{{ product.cif }}</td>
+        <td>{{ product.importe }}</td>
+        <td>{{ product.iva }}</td>
+        <td>{{ product.importeTotal }}</td>
+        <td>{{ formatDate(product.fecha) }}</td>
+        <td
+          *ngIf="product.url"
+          style="cursor: pointer"
+          (click)="seePhoto(product.url)"
+        >
+          <img src="../../../../assets/camara.png" width="45px" />
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
 </div>
 <ng-template #Loading>
-    <app-loading></app-loading>
-  </ng-template>
+  <app-loading></app-loading>
+</ng-template>

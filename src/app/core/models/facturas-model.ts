@@ -1,6 +1,6 @@
 export interface IFactura {
   cif: string;
-  cliente: 'Prueba';
+  proveedor: 'Prueba';
   fecha: string;
   importe: number;
   image: any;

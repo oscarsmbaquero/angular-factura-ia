@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { IFactura } from 'src/app/core/models/facturas-model';
 import { FacturasService } from 'src/app/core/services/cars/facturas.service';
 
 @Component({
@@ -7,10 +9,9 @@ import { FacturasService } from 'src/app/core/services/cars/facturas.service';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit{
-seePhoto(url: string) {
-  window.location.href = url;
-}
 
+  
+  private facturasSubject: BehaviorSubject<IFactura[]> = new BehaviorSubject<IFactura[]>([]);
   facturas! : any[]
   loading = true;
 
@@ -22,15 +23,18 @@ seePhoto(url: string) {
 
   ngOnInit(): void {
     this.facturasService.getfacturas().subscribe((element)=>{
+      this.facturasSubject.next(element);
       this.facturas = element;
-      this.loading= false;
-      console.log(this.facturas);
-            
+      this.loading= false;            
     })
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     
   }
+  seePhoto(url: string) {
+    window.location.href = url;
+  }
+  
    formatDate(dateString: any) {
     const date = new Date(dateString);
     
@@ -43,6 +47,32 @@ seePhoto(url: string) {
     return `${day}/${month}/${year}`;
   }
 
+  capturarTexto(event: any) {
+    //console.log(event);
+    
+    let textoDigitado = event.target.value;
+    this.getFacturasFiltered(textoDigitado);
+  }
+  private getFacturasFiltered(textoDigitado?: string) {
+    if (textoDigitado) {
+      console.log(textoDigitado);
+      
+        // Obtener la lista actual de usuarios del BehaviorSubject
+        const currentFacturas = this.facturasSubject.getValue();
+        // Filtrar la lista de usuarios
+        const filteredUsers = currentFacturas.filter(element => {
+            return element.proveedor.toLowerCase().includes(textoDigitado.toLowerCase());
+        });
+
+        // Asignar la lista filtrada a this.users
+        this.facturas = filteredUsers;
+        //console.log(filteredUsers);
+    } else {
+        // Si no se proporciona texto, asignar la lista completa de usuarios a this.users
+        const currentFacturas = this.facturasSubject.getValue();
+        this.facturas = currentFacturas;
+    }
+}
 
 
 }

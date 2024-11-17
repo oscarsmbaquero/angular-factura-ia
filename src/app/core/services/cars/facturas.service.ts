@@ -4,6 +4,7 @@ import { HttpClient} from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/enviroment/environment';
 import { map } from 'rxjs/operators';
+import { IFactura } from '../../models/facturas-model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,8 @@ export class FacturasService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getfacturas():Observable<ICar[]> {
-    return this.httpClient.get<ICar[]>(`${environment.apiUrl}facturas`);
+  public getfacturas():Observable<IFactura[]> {
+    return this.httpClient.get<IFactura[]>(`${environment.apiUrl}facturas`);
   }
   // public deleteCar(id: string): Observable<ICar> {
   //   console.log(id,22)
