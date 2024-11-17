@@ -2,8 +2,9 @@
     display: flex;
     justify-content: center;
     /* align-items: center; */
-    min-height: 100vh;
+    min-height: 90vh;
     padding: 10px;
+    padding-top: 50px;
     box-sizing: border-box; 
     width: 100%; 
 }

@@ -3,36 +3,35 @@
     <mat-card-content>
       <div class="card">
         <div>
-          <!-- <img
-          src="../../../assets/logo1.png"
-          width="90"
-          height="90"
-          alt=""
-          style="margin-left: 40px"
-        /> -->
-        <span
-      class="text-warning"
-      >Facturas</span
-    >&nbsp;<span class="text-danger">IA</span>
-  
+          <span class="text-warning">Facturas</span>&nbsp;<span
+            class="text-danger"
+            >IA</span
+          >
         </div>
         <div>
           <form novalidate [formGroup]="registerCar">
             <div class="file-upload">
               <label for="fileInput" class="custom-file-upload">
-                <i class="pi pi-upload"></i> {{nameArchivo || 'Seleccionar archivo'}}
+                <i class="pi pi-upload"></i>
+                {{ nameArchivo || "Seleccionar archivo" }}
               </label>
-              <input 
-                type="file" 
-                id="fileInput" 
-                (change)="onFileSelected($event)" 
+              <input
+                type="file"
+                id="fileInput"
+                (change)="onFileSelected($event)"
                 accept="image/*"
               />
             </div>
-              <p-button label="Enviar" icon="pi pi-check" size="small" (click)="onSubmit()" [disabled]="!registerCar.valid"/>          
+            <p-button
+              label="Enviar"
+              icon="pi pi-check"
+              size="small"
+              (click)="onSubmit()"
+              [disabled]="!registerCar.valid"
+            />
           </form>
         </div>
-    </div>
+      </div>
     </mat-card-content>
   </mat-card>
 </div>

@@ -80,9 +80,7 @@ export class CreateComponent {
   }
 
   //Función accionada al clickar en submit
-  public onSubmit(): void {
-    console.log('sentro');
-    
+  public onSubmit(): void {    
     // El usuario ha pulsado en submit->cambia a true submitted
     this.submitted = true;
     // Si el formulario es valido
@@ -90,9 +88,7 @@ export class CreateComponent {
       // Creamos un Usuario y lo emitimos
       const car: ICar = {
         imagen: this.registerCar.get('imagen')?.value,
-      };
-      console.log(car);
-      
+      };      
       this.loading= true;
       this.facturasService.addCars(car).subscribe(
         (response) => {

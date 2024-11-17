@@ -9,6 +9,7 @@ import { FacturasService } from 'src/app/core/services/cars/facturas.service';
 export class ListComponent implements OnInit{
 
   facturas! : any[]
+  loading = true;
 
   constructor(
     private facturasService: FacturasService
@@ -19,6 +20,7 @@ export class ListComponent implements OnInit{
   ngOnInit(): void {
     this.facturasService.getfacturas().subscribe((element)=>{
       this.facturas = element;
+      this.loading= false;
       console.log(this.facturas);
             
     })
