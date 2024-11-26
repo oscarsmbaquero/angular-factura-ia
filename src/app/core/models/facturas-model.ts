@@ -7,4 +7,5 @@ export interface IFactura {
   importeTotal: number;
   iva: number;
   _id: Object;
+  tipo:string;
 }

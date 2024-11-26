@@ -33,8 +33,11 @@ export class FacturasService {
   //   return this.favoriteCarsSubject.asObservable();
   // }
   public addCars(body: ICar): Observable<ICar> {
+    console.log(body,'body');
+    
     const formData = new FormData();
     formData.append('imagen', body.imagen);
+    //formData.append('tipo', body.tipo);
     return this.httpClient.post<ICar>(
       `${environment.apiUrl}facturas`,
       formData

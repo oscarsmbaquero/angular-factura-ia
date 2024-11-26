@@ -22,6 +22,17 @@
                 accept="image/*"
               />
             </div>
+            <mat-form-field>
+              <mat-label>TIPO</mat-label>
+              <select matNativeControl required formControlName="tipo"
+              (change)="onInputChange()"
+              >
+                <option ></option>
+                <option value='tipo1'>&nbsp;uno</option>
+                <option value='tipo2'>&nbsp;dos</option>
+                <option value='tipo3'>&nbsp;tres</option>
+              </select>
+            </mat-form-field>
             <p-button
               label="Enviar"
               icon="pi pi-check"
