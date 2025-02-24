@@ -1,16 +1,12 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
   <a class="navbar-brand" href="#">
-    <!-- <img src="assets/logo1.png" width="70" height="50" alt="" /> -->
-    &nbsp;<span
-      class="text-warning"
-      >Facturas</span
-    >&nbsp;<span class="text-danger">IA</span>
+    &nbsp;<span class="text-warning">Gestión</span>&nbsp;<span class="text-danger">IA</span>
   </a>
   <button
     class="navbar-toggler"
     type="button"
-    data-toggle="collapse"
-    data-target="#navbarSupportedContent"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent"
     aria-expanded="false"
     aria-label="Toggle navigation"
@@ -19,22 +15,78 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li *ngIf="userActive;" class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/list" data-toggle="collapse" data-target=".navbar-collapse.show">Listado</a>
+    <ul class="navbar-nav me-auto">
+      <!--asistentes-->
+      <li class="nav-item dropdown" *ngIf="userActive">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <span>Asistentes</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item"><span>Abogado</span></a>
+          </li>
+          <li>
+            <a class="dropdown-item"><span>Contable</span></a>
+          </li>
+          <li>
+            <a class="dropdown-item"><span>Otro</span></a>
+          </li>
+          <li>
+            <a class="dropdown-item"><span>Otro más</span></a>
+          </li>
+        </ul>
       </li>
-      <li *ngIf="userActive;" class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/anadir" data-toggle="collapse" data-target=".navbar-collapse.show">Añadir</a>
+      <!--facturas-->
+      <li class="nav-item dropdown" *ngIf="userActive">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <span>Facturas</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" routerLink="/list"><span>Listado</span></a>
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="/anadir"><span>Añadir</span></a>
+          </li>
+        </ul>
       </li>
+    </ul>
+
+    <!-- Login / Logout alineado a la derecha -->
+    <ul class="navbar-nav ml-auto my-2 my-lg-0 navbar-nav-scroll">
       <li *ngIf="!userActive; else logoutLink" class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/login" data-toggle="collapse" data-target=".navbar-collapse.show">Login</a>        
+        <a
+          class="nav-link"
+          routerLink="/login"
+          data-bs-toggle="collapse"
+          data-bs-target=".navbar-collapse.show"
+        >
+          Login
+        </a>
       </li>
-      
       <ng-template #logoutLink>
         <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" routerLink="/logout" data-toggle="collapse" data-target=".navbar-collapse.show" 
-          (click)="logout()"
-          >Logout</a>        
+          <a
+            class="nav-link"
+            routerLink="/logout"
+            data-bs-toggle="collapse"
+            data-bs-target=".navbar-collapse.show"
+            (click)="logout()"
+          >
+            Logout
+          </a>
         </li>
       </ng-template>
     </ul>

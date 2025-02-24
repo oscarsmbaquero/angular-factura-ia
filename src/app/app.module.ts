@@ -11,7 +11,7 @@ import { CoreModule } from './core/core.module';
 //Components
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { CreateComponent } from './pages/create/create.component';
-import { ListComponent } from './pages/create/list/list.component';
+import { ListComponent } from './pages/list/list.component';
 
 
 //material
