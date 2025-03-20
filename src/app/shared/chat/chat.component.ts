@@ -25,11 +25,21 @@ export class ChatComponent implements OnInit{
 
   sendMessage() {
     if (!this.inputText.trim()) return;
+  
+    // Agregar el mensaje del usuario al historial
     this.messages.push({ role: "user", content: this.inputText });
+  
     this.chatService.sendMessage(this.messages).subscribe((response) => {
-      this.messages.push(response);
+      // Verificar si el contenido de la respuesta es válido
+      if (response && response.content && response.content.length > 0) {
+        const aiMessage = response.content[0].text.value; // Extraer el mensaje de la respuesta
+        this.messages.push({ role: "assistant", content: aiMessage });
+      } else {
+        console.error("Formato de respuesta inesperado", response);
+      }
     });
-    this.inputText = "";
+  
+    this.inputText = ""; // Limpiar el input después de enviar
   }
 
   capitalize(text: string): string {

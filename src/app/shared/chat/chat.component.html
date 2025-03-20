@@ -1,18 +1,17 @@
 <div class="chat">
-<div class="chat-container">
+  <div class="chat-container">
     <div>
-      <h1>{{capitalize(chatTipo)}}</h1>
+      <h1>{{ capitalize(chatTipo) }}</h1>
     </div>
     <div class="chat-box">
       <div *ngFor="let msg of messages" class="message" [ngClass]="msg.role">
         <strong>{{ msg.role }}:</strong> {{ msg.content }}
       </div>
     </div>
-  
+
     <div class="chat-input">
       <input [(ngModel)]="inputText" placeholder="Escribe tu mensaje..." />
       <button (click)="sendMessage()">Enviar</button>
     </div>
   </div>
 </div>
-  
