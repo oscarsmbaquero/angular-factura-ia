@@ -13,7 +13,6 @@ import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { CreateComponent } from './pages/create/create.component';
 import { ListComponent } from './pages/list/list.component';
 
-
 //material
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -27,6 +26,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ButtonModule } from 'primeng/button';
 import { FileUploadModule } from 'primeng/fileupload';
 import { TableModule } from 'primeng/table';
+import { HomeComponent } from './pages/home/home.component';
+import { AgentesComponent } from './pages/asistentes/agentes.component';
 // import { MaterialFileInputModule } from 'ngx-material-file-input';
 
 
@@ -38,7 +39,9 @@ import { TableModule } from 'primeng/table';
     NavbarComponent,
     CreateComponent,
     FooterComponent,
-    ListComponent
+    ListComponent,
+    HomeComponent,
+    AgentesComponent
   ],
   imports: [
     BrowserModule,

@@ -16,32 +16,6 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav me-auto">
-      <!--asistentes-->
-      <li class="nav-item dropdown" *ngIf="userActive">
-        <a
-          class="nav-link dropdown-toggle"
-          href="#"
-          role="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <span>Asistentes</span>
-        </a>
-        <ul class="dropdown-menu">
-          <li>
-            <a class="dropdown-item"><span>Abogado</span></a>
-          </li>
-          <li>
-            <a class="dropdown-item"><span>Contable</span></a>
-          </li>
-          <li>
-            <a class="dropdown-item"><span>Otro</span></a>
-          </li>
-          <li>
-            <a class="dropdown-item"><span>Otro más</span></a>
-          </li>
-        </ul>
-      </li>
       <!--facturas-->
       <li class="nav-item dropdown" *ngIf="userActive">
         <a
@@ -62,6 +36,15 @@
           </li>
         </ul>
       </li>
+      <li *ngIf="userActive" class="nav-item"  routerLinkActive="active">
+      <a
+        class="nav-link"
+        routerLink="/agentes"
+        data-toggle="collapse"
+        data-target=".navbar-collapse.show"
+        >Asistentes</a
+      >
+    </li>
     </ul>
 
     <!-- Login / Logout alineado a la derecha -->
