@@ -1,11 +1,11 @@
 <div class="chat">
   <div class="chat-container">
-    <div>
-      <h1>{{ capitalize(chatTipo) }}</h1>
+    <div class="title">
+      <span>Hola {{userActive}}, soy tu asistente <strong>{{ capitalize(chatTipo) }}</strong></span>
     </div>
     <div class="chat-box">
       <div *ngFor="let msg of messages" class="message" [ngClass]="msg.role">
-        <strong>{{ msg.role }}:</strong> {{ msg.content }}
+        <strong></strong> {{ msg.content }}
       </div>
     </div>
 

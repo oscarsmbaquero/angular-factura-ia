@@ -1,22 +1,12 @@
 .main {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ocupa al menos la altura completa de la pantalla */
-  background-color: white;
-  padding: 16px; /* Ajusta el padding según sea necesario */
+  min-height: 80vh;
+  background: linear-gradient(to bottom, #f0f2f5, #d9e2ec); /* Fondo degradado */
+  padding: clamp(8px, 2vw, 24px); /* Ajuste de padding responsivo */
   box-sizing: border-box;
+  border: 20px solid white; /* Marco blanco alrededor */
+  border-radius: 8px; /* Bordes redondeados para un efecto más suave */
 }
 
-/* Para mejorar la responsividad en pantallas pequeñas */
-@media (max-width: 768px) {
-  .main {
-      padding: 8px; /* Reduce el padding en pantallas más pequeñas */
-  }
-}
 
-/* Ajuste opcional en pantallas grandes */
-@media (min-width: 1200px) {
-  .main {
-      padding: 24px; /* Aumenta el padding en pantallas grandes */
-  }
-}

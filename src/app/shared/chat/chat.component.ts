@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ChatService } from "src/app/core/services/chat/chat.service"; 
 import { ActivatedRoute } from '@angular/router';
+import { UsersService } from "src/app/core/services/users/users.service";
 
 @Component({
   selector: "app-chat",
@@ -11,15 +12,25 @@ export class ChatComponent implements OnInit{
   messages: any[] = [];
   inputText: string = "";
   chatTipo: string = '';
+  userActive :any;
 
-  constructor(private chatService: ChatService, private route: ActivatedRoute) {}
+  constructor(
+              private chatService: ChatService, 
+              private route: ActivatedRoute,
+              private usersService: UsersService
+            ) {}
 
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.chatTipo = params.get('tipo') || '';
     });
-    console.log(this.chatTipo);
+    // Obtener el valor de sessionStorage
+
+    this.usersService.getCurrentUser().subscribe(user => {
+      this.userActive = user?.user;
+    });    
+    
     
   }
 

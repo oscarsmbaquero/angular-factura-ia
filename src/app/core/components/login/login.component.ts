@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IUser } from '../../services/models/user-models';
-import * as AOS from 'aos';
 
 import { Router } from '@angular/router';
 import {
@@ -33,13 +32,6 @@ export class LoginComponent {
     this.loginUser = this.formBuilder.group({
       user: ['', [Validators.required ]],
       password: ['', [Validators.required]],
-    });
-  }
-  
-  ngOnInit() {
-    AOS.init({
-      duration: 1550,
-      delay: 550,
     });
   }
 

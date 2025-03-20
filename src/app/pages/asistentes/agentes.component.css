@@ -1,6 +1,14 @@
 h1{
   font-family: 'cursive';  
 }
+
+.conta{
+  min-height: 80vh;
+  display: flex; 
+  flex-direction: row; 
+  align-items: center; 
+  justify-content: center;
+}
 .card-link {
     text-decoration: none; 
     color: inherit; 
@@ -11,16 +19,14 @@ h1{
   }
   
   .card {
-    display: flex; 
-    flex-direction: row; 
-    align-items: center; 
+ 
     justify-content: flex-start; 
     border: 1px solid #ddd;
     border-radius: 10px; 
     background-color: #fff;
     transition: transform 0.2s; 
     padding: 8px;
-    box-shadow: 10px 10px 20px #babecc, -10px -10px 20px #ffffff;
+    box-shadow: 5px 5px 20px #babecc, -5px -5px 20px #ffffff;
   }
   
   .card-image {
