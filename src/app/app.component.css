@@ -9,4 +9,10 @@
   border-radius: 8px; /* Bordes redondeados para un efecto más suave */
 }
 
+/* Estilos responsivos */
+@media (max-width: 500px) {
+  .main {
+    border: 10px solid white;
+  }
 
+}
