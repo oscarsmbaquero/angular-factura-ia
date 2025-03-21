@@ -7,15 +7,9 @@ import { environment } from "src/enviroment/environment";
   providedIn: "root",
 })
 export class ChatService {
-  private apiUrl = "http://localhost:3000/chat"; // Backend URL
-
   constructor(private http: HttpClient) {}
 
-  sendMessage(messages: any[]): Observable<any> {
-    return this.http.post<any>( `${environment.apiUrl}chat`, { messages });
-  }
-
-  getAssistants(){
-    
+  sendMessage(messages: any[], tipo: string): Observable<any> {
+    return this.http.post<any>( `${environment.apiUrl}chat`, { messages, tipo });
   }
 }

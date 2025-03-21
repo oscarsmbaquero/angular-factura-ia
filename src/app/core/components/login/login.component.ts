@@ -48,14 +48,6 @@ export class LoginComponent {
       console.log(user, 46);
       this.userServices.login(user).subscribe(
         (response) => {
-          console.log('Datos enviados con éxito');
-          // this.snackBar.open(
-          //   'El coche ha sido añadido correctamente',
-          //   'Cerrar',
-          //   {
-          //     duration: 3000,
-          //   }
-          // );
           this.router.navigate(['list']);
         },
         (error) => {
