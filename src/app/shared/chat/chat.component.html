@@ -3,9 +3,9 @@
     <div class="title">
       <span>Hola {{userActive}}, soy tu asistente <strong>{{ capitalize(chatTipo) }}</strong></span>
     </div>
-    <div class="chat-box">
+    <div class="chat-box" #chatBox>
       <div *ngFor="let msg of messages" class="message" [ngClass]="msg.role">
-        <strong></strong> {{ msg.content }}
+         {{ msg.content }}
       </div>
     </div>
 
